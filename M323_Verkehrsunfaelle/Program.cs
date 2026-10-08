@@ -15,7 +15,7 @@
                 Console.WriteLine($"{u.Jahr} | {u.Typ} | {u.Schweregrad}");
             }
 
-            Console.WriteLine("\n--- Unfalle pro Jahr (v1.0 imperativ)");
+            Console.WriteLine("\n--- Unfalle pro Jahr (v1.0 imperativ)\n");
 
             var proJahr = AnalyseImperativ.UnfaelleProJahr(unfaelle);
 
@@ -24,6 +24,18 @@
                 // eintrag.Key = Jahr, eintrag.Value = Anzahl
                 Console.WriteLine($"{eintrag.Key}: {eintrag.Value}");
             }
+
+            Console.WriteLine("\n--- Unfälle pro Typ (V1.0 imperativ) ---\n");
+
+            var proTyp = AnalyseImperativ.UnfaelleProTyp(unfaelle);
+
+            foreach (var eintrag in proTyp)
+            {
+                Console.WriteLine($"{eintrag.Key}: {eintrag.Value}");
+            }
+
+            string haeufigster = AnalyseImperativ.HaeufigsterTyp(proTyp);
+            Console.WriteLine($"\nHäufigster Unfalltyp: {haeufigster}");
         }
     }
 }
