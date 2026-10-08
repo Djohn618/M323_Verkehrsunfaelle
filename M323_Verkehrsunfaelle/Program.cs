@@ -36,6 +36,16 @@
 
             string haeufigster = AnalyseImperativ.HaeufigsterTyp(proTyp);
             Console.WriteLine($"\nHäufigster Unfalltyp: {haeufigster}");
+
+            Console.WriteLine("\n--- Schwere Unfälle pro Jahr (V1.0 imperativ) ---\n");
+
+            var schwereProJahr = AnalyseImperativ.SchwereUnfaelleProJahr(unfaelle);
+
+            foreach (var eintrag in schwereProJahr)
+            {
+                // eintrag.Key = Jahr, eintrag.Value = Anzahl schwere Unfälle
+                Console.WriteLine($"{eintrag.Key}: {eintrag.Value}");
+            }
         }
     }
 }
