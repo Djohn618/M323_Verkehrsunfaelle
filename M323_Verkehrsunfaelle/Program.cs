@@ -14,6 +14,16 @@
                 Unfall u = unfaelle[i];
                 Console.WriteLine($"{u.Jahr} | {u.Typ} | {u.Schweregrad}");
             }
+
+            Console.WriteLine("\n--- Unfalle pro Jahr (v1.0 imperativ)");
+
+            var proJahr = AnalyseImperativ.UnfaelleProJahr(unfaelle);
+
+            foreach (var eintrag in proJahr)
+            {
+                // eintrag.Key = Jahr, eintrag.Value = Anzahl
+                Console.WriteLine($"{eintrag.Key}: {eintrag.Value}");
+            }
         }
     }
 }
